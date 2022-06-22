@@ -3,7 +3,7 @@ def user_schema(item) -> dict:
         "id": str(item["_id"]),
         "name": item["name"],
         "password": item["password"],
-        "register": item["register"],
+        "register": item["r"],
         "status": item["status"],
         "role": item["role"],
         "created_at": item["created_at"],

@@ -1,4 +1,3 @@
-from pymongo import MongoClient
 from src.models.user import CreateUserRequest
 from fastapi import HTTPException
 from starlette import status

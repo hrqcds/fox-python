@@ -18,7 +18,7 @@ class User(BaseModel):
     id: Optional[str]
     name: str
     password: str
-    r: str = Field(None, alias="register")
+    r: str = Field(None, alias="register", description="registro do colaborador")
     status: Status
     role: Role
     created_at: datetime
@@ -34,6 +34,18 @@ class CreateUserRequest(BaseModel):
     password: str = Field(None, min_length=6, description="Senha do colaborador")
     status: Status = Status.ACTIVE
     role: Role = Role.OPERATOR
+
+    class Config:
+        orm_mode = True
+
+
+class UpdateUserRequest(BaseModel):
+    name: Optional[str]
+    r: Optional[str] = Field(None, alias="register", max_length=13, min_length=13,
+                             description="Matricula do colaborador")
+    password: Optional[str] = Field(None, min_length=6, description="Senha do colaborador")
+    status: Optional[str] = Status.ACTIVE
+    role: Optional[str] = Role.OPERATOR
 
     class Config:
         orm_mode = True
