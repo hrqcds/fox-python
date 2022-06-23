@@ -2,7 +2,7 @@ from enum import Enum
 from datetime import datetime
 from typing import Optional, List
 from pydantic import BaseModel, Field
-from src.models.Process import Process
+from src.models.process import Process
 
 
 class Factory(BaseModel):
