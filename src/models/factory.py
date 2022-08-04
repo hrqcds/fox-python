@@ -8,6 +8,6 @@ from src.models.process import Process
 class Factory(BaseModel):
     id: Optional[str]
     name: str
-    process: List[Process]
+    process: Optional[List[Process]]
     created_at: datetime
     updated_at: datetime
